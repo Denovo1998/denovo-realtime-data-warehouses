@@ -31,7 +31,8 @@ public class PubSubMysqlCDC {
             JSONSchema<Map> jsonSchema = JSONSchema.of(SchemaDefinition.<Map>builder().withPojo(Map.class).build());
             Map keyResult = jsonSchema.decode(keyValues.getKey());
             Map valueResult = jsonSchema.decode(keyValues.getValue());
-
+            System.out.println(keyResult);
+            System.out.println(valueResult);
             consumer.acknowledge(msg);
         }
     }

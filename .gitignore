@@ -1,0 +1,44 @@
+# Eclipse
+.classpath
+.project
+.settings/
+.recommenders/
+.factorypath
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+**/.DS_Store
+.java-version
+
+# VisualStudioCode artifacts
+.vscode/
+
+# Maven
+log/
+target/
+
+# Python
+*.pyc
+
+# Perf tools
+*.hgrm
+
+# tmp files
+*.pid
+
+# CI generated files
+.repository
+docker.debug-info
+
+# Yarn
+**/yarn.lock
+
+# Avro
+examples/flink/src/main/java/org/apache/flink/avro/generated
+pulsar-flink/src/test/java/org/apache/flink/avro/generated
+pulsar-client/src/test/java/org/apache/pulsar/client/avro/generated
+/build/
