@@ -18,6 +18,9 @@
     <modules>
         <module>pulsar-test</module>
         <module>debezium-mysql-cdc-pulsar</module>
+        <module>flink-pulsar</module>
+        <module>common</module>
+        <module>pulsar-sink-doris</module>
     </modules>
 
     <properties>
