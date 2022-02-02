@@ -21,6 +21,7 @@
         <module>flink-pulsar</module>
         <module>common</module>
         <module>pulsar-sink-doris</module>
+        <module>flink-cdc-pulsar</module>
     </modules>
 
     <properties>
@@ -31,6 +32,11 @@
         <!-- latest version from apache pulsar master -->
         <pulsar.version>2.8.0</pulsar.version>
         <slf4j.version>1.7.25</slf4j.version>
+        <bookkeeper.version>4.14.1</bookkeeper.version>
+
+        <!-- latest version from apache flink -->
+        <flink.version>1.13.5</flink.version>
+        <flinkcdc.version>2.1.1</flinkcdc.version>
 
         <!-- plugin dependencies -->
         <lombok.version>1.16.22</lombok.version>
@@ -64,17 +70,66 @@
             </dependency>
 
             <!-- tools dependencies -->
-            <!--<dependency>
+            <dependency>
                 <groupId>org.apache.bookkeeper</groupId>
                 <artifactId>bookkeeper-tools-framework</artifactId>
                 <version>${bookkeeper.version}</version>
-            </dependency>-->
+            </dependency>
 
             <!-- test dependencies -->
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
+            </dependency>
+
+            <!-- flink dependencies -->
+            <dependency>
+                <groupId>com.ververica</groupId>
+                <artifactId>flink-connector-mysql-cdc</artifactId>
+                <version>${flinkcdc.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-java</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-streaming-java_2.11</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-clients_2.11</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-json</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-streaming-scala_2.11</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-table-api-java-bridge_2.11</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-table-planner_2.11</artifactId>
+                <version>${flink.version}</version>
             </dependency>
 
         </dependencies>
@@ -87,7 +142,11 @@
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.apache.bookkeeper</groupId>
+            <artifactId>bookkeeper-tools-framework</artifactId>
+            <version>${bookkeeper.version}</version>
+        </dependency>
 
     </dependencies>
 

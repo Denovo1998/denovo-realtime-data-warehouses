@@ -63,7 +63,7 @@ public class GenericJsonSchemaProducerExample {
                     .topic(TOPIC)
                     .create()) {
 
-                final int numMessages = 10;
+                final int numMessages = 10000;
 
                 for (long i = 0L; i < numMessages; i++) {
                     final long id = i;
@@ -81,6 +81,10 @@ public class GenericJsonSchemaProducerExample {
                             .key(username)
                             .value(record)
                             .sendAsync();
+
+                    if (i % 100 == 0) {
+                        Thread.sleep(200);
+                    }
                 }
                 // flush out all outstanding messages
                 producer.flush();
@@ -89,7 +93,7 @@ public class GenericJsonSchemaProducerExample {
                         numMessages, TOPIC);
 
             }
-        } catch (PulsarClientException e) {
+        } catch (PulsarClientException | InterruptedException e) {
             System.err.println("Failed to produce generic avro messages to pulsar:");
             e.printStackTrace();
             Runtime.getRuntime().exit(-1);

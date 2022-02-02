@@ -16,8 +16,8 @@
         </developer>
     </developers>
 
-    <artifactId>debezium-mysql-cdc-pulsar</artifactId>
-    <name>Pulsar IO ::: debezium-mysql-cdc</name>
+    <artifactId>flink-pulsar</artifactId>
+    <name>Pulsar Flink ::: ETL</name>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -34,6 +34,12 @@
             <groupId>org.apache.pulsar</groupId>
             <artifactId>pulsar-client-admin</artifactId>
             <version>${pulsar.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.denovo</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
